@@ -1,0 +1,13 @@
+h6 {
+  color: gray;
+  font-size: large;
+}
+
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 25px;
+  }
+  h6 {
+    font-size: small;
+  }
+}

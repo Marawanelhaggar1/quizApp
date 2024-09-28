@@ -1,0 +1,11 @@
+.col-8 {
+  text-align: center;
+  margin: auto;
+  height: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  h3 {
+    font-size: 15px;
+  }
+}
