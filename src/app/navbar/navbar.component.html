@@ -1,0 +1,9 @@
+<div class="nav">
+  <a (click)="switchLanguage('english')">English</a>
+  <a (click)="switchLanguage('spanish')">Español</a>
+  <a (click)="switchLanguage('arabic')">العربيه</a>
+  <a (click)="switchLanguage('french')">French</a>
+  <a (click)="switchLanguage('german')">German</a>
+
+  <a [routerLink]="['/quiz/', lang]" class="quiz"> Quiz</a>
+</div>
