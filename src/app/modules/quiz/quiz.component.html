@@ -2,7 +2,7 @@
   <h2 class="text-center">{{ language | titlecase }} Quiz</h2>
   <form [formGroup]="quizForm" (ngSubmit)="onSubmit()">
     <div formArrayName="answers">
-      <div *ngFor="let question of quizQuestions; let i = index" class="mb-4">
+      <div *ngFor="let question of quizQuestions; let i = index"  class="question ">
         <p>
           <strong>Question {{ i + 1 }}:</strong> {{ question.question }}
         </p>
