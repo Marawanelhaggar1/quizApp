@@ -8,6 +8,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { NavbarComponent } from './navbar/navbar.component';
+import { TimePipePipe } from './shared/pipes/time-pipe.pipe';
 
 // Loader function to load translation files
 export function HttpLoaderFactory(http: HttpClient) {

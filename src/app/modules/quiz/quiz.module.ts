@@ -6,9 +6,10 @@ import { QuizComponent } from './quiz.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ResultsComponent } from './results/results.component';
 import { TranslateModule } from '@ngx-translate/core';
+import { TimePipePipe } from 'src/app/shared/pipes/time-pipe.pipe';
 
 @NgModule({
-  declarations: [QuizComponent, ResultsComponent],
+  declarations: [QuizComponent, ResultsComponent, TimePipePipe],
   imports: [
     CommonModule,
     QuizRoutingModule,

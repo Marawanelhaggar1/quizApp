@@ -25,6 +25,9 @@ export class QuizComponent implements OnInit {
   score: number = 0;
   quizCompleted: boolean = false;
   progress: number = 0;
+  remainingTime: number = 120;
+  timerInterval: any;
+
   constructor(
     private route: ActivatedRoute,
     private _quizService: QuizService,
@@ -40,6 +43,17 @@ export class QuizComponent implements OnInit {
     });
 
     this.initializeForm();
+    this.startTimer();
+  }
+
+  startTimer(): void {
+    this.timerInterval = setInterval(() => {
+      this.remainingTime--;
+      if (this.remainingTime === 0) {
+        clearInterval(this.timerInterval);
+        this.onSubmit();
+      }
+    }, 1000);
   }
 
   loadQuizQuestions() {
