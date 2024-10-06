@@ -1,5 +1,19 @@
 <div class="container mt-5 p-2">
+  <div class="progress mb-4">
+    <div
+      class="progress-bar progress-bar-striped"
+      role="progressbar"
+      [style.width]="progress + '%'"
+      [attr.aria-valuenow]="progress"
+      aria-valuemin="0"
+      aria-valuemax="100"
+    >
+      {{ progress }}%
+    </div>
+  </div>
+
   <h2 class="text-center">{{ language | titlecase }} Quiz</h2>
+
   <form [formGroup]="quizForm" (ngSubmit)="onSubmit()">
     <div formArrayName="answers">
       <div
@@ -17,6 +31,7 @@
               type="radio"
               [formControlName]="i.toString()"
               [value]="option"
+              (change)="updateProgress()"
             />
             {{ option }}
           </label>

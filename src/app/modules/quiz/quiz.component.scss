@@ -1,6 +1,18 @@
-.question{
-    margin: 2rem 0;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    border-radius: 20px;
-    padding:  2rem;
+.question {
+  margin: 2rem 0;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 20px;
+  padding: 2rem;
+}
+
+.progress {
+  height: 30px;
+  background-color: #f3f3f3;
+}
+
+.progress-bar {
+  background-color: #007bff;
+  line-height: 30px;
+  color: white;
+  text-align: center;
 }

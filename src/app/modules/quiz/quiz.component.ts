@@ -24,7 +24,7 @@ export class QuizComponent implements OnInit {
   language: string = 'english';
   score: number = 0;
   quizCompleted: boolean = false;
-
+  progress: number = 0;
   constructor(
     private route: ActivatedRoute,
     private _quizService: QuizService,
@@ -52,6 +52,17 @@ export class QuizComponent implements OnInit {
     this.quizForm = this.fb.group({
       answers: this.fb.array(this.quizQuestions.map(() => this.fb.control(''))),
     });
+
+    this.progress = 0;
+  }
+
+  updateProgress(): void {
+    // Calculate progress based on how many answers are selected
+    const totalQuestions = this.quizQuestions.length;
+    const answeredQuestions = this.answers.controls.filter(
+      (control) => control.value
+    ).length;
+    this.progress = Math.floor((answeredQuestions / totalQuestions) * 100);
   }
 
   get answers(): FormArray {
@@ -72,5 +83,6 @@ export class QuizComponent implements OnInit {
 
   reset() {
     this.quizForm.reset();
+    this.progress = 0;
   }
 }
