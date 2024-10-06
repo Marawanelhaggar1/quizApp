@@ -69,4 +69,8 @@ export class QuizComponent implements OnInit {
       queryParams: { score: this.score, total: this.quizQuestions.length },
     });
   }
+
+  reset() {
+    this.quizForm.reset();
+  }
 }
